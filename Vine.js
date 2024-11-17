@@ -165,13 +165,13 @@ if (p.getFoodLevel() < minFoodLevel) {
 function face() {
     if (botMode == "mainSouth")
     {
-        p.lookAt(0,0)
+        p.lookAt(0,7.4)
         Time.sleep(400)
     }
 
     if (botMode == "mainNorth")
     {
-        p.lookAt(180,0)
+        p.lookAt(180,7.4)
         Time.sleep(400)
     }
 }

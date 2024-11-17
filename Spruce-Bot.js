@@ -88,7 +88,7 @@ function chopSouth()
 
 function dropWood() {
     p.lookAt(-133,60)
-    depositableItems= ["minecraft:spruce_log"]
+    depositableItems= ["minecraft:spruce_log","minecraft:stick","minecraft:spruce_leaves"]
     for (let v = 10; v <= 45; v++) { // Loop over whole inventory
         while (depositableItems.includes(Player.openInventory().getSlot(v).getItemId())) {
             //Player.openInventory().dropSlot(v)

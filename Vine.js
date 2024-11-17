@@ -7,13 +7,14 @@ const abortKey = "a"
 
 function Tick()
 {
+    KeyBind.keyBind("key.sneak", true);
     grabShears()
     face()
     checkManualAbort()
     KeyBind.keyBind("key.attack", true);
     KeyBind.keyBind('key.right', true)
     checkMove()
-    KeyBind.keyBind("key.sneak", true);
+    
 }
 
 

@@ -85,6 +85,14 @@ function chopSouth()
     p.lookAt(0,0)
 }
 
+function checkFell() {
+    y = getY()
+    if (y < 72)
+    {
+        terminateReason = "bot fell"
+        botMode = "terminate"
+    }
+}
 
 function dropWood() {
     p.lookAt(-133,60)
@@ -330,6 +338,7 @@ function tickNorth()
 
 function Tick()
 {
+    checkFell()
     checkRowEnd()
     Time.sleep(100)
     checkManualAbort()

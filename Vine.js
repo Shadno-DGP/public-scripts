@@ -1,12 +1,16 @@
 
 botMode = "mainSouth"
 
+
+groupname = "shadnobot"
+discordID = "96706920664006656"
 const p = Player.getPlayer()
 
 const abortKey = "a"
 
 function Tick()
 {
+    checkFell()
     KeyBind.keyBind("key.sneak", true);
     grabShears()
     face()
@@ -16,6 +20,8 @@ function Tick()
     checkMove()
     
 }
+
+mainSlot = 36
 
 
 while (botMode != "terminate")
@@ -50,6 +56,15 @@ function checkManualAbort() {
     if (KeyBind.getPressedKeys().contains("key.keyboard." + abortKey)) {
         Chat.log("Player has pressed abort key. Terminating.")
         terminateReason = "Player has pressed abort key."
+        botMode = "terminate"
+    }
+}
+
+function checkFell() {
+    y = p.getPos().y
+    if (y < 41)
+    {
+        terminateReason = "bot fell"
         botMode = "terminate"
     }
 }
